@@ -16,7 +16,7 @@ input.addEventListener('input', debounce(onSearch, DEBOUNCE_DELAY));
 
 function onSearch(e) {
   const searchValue = e.target.value.trim();
-  if (searchValue === '') {
+  if (!searchValue) {
     countryList.innerHTML = '';
     countryInfo.innerHTML = '';
   }
