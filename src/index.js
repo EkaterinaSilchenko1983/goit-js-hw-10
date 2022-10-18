@@ -36,7 +36,7 @@ function onSearch(e) {
       }
     })
     .catch(err => {
-      Notiflix.Notify.failure('Oops, there is no country with that name');
+      Notiflix.Notify.failure(err.message);
     });
 }
 

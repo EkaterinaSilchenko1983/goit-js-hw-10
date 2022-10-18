@@ -5,7 +5,7 @@ export function fetchCountries(name) {
     `${base_url}/name/${name}?fields=name,capital,population,flags,languages`
   ).then(response => {
     if (!response.ok || response.status === 404) {
-      Notiflix.Notify.failure('Oops, there is no country with that name');
+      throw new Error('Oops, there is no country with that name');
     }
     return response.json();
   });
